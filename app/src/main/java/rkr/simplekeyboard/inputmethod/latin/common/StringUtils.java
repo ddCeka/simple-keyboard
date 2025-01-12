@@ -18,13 +18,10 @@ package rkr.simplekeyboard.inputmethod.latin.common;
 
 import android.text.TextUtils;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 
 public final class StringUtils {
-    private static final String EMPTY_STRING = "";
-
     private StringUtils() {
         // This utility class is not publicly instantiable.
     }
@@ -69,24 +66,6 @@ public final class StringUtils {
             return false;
         }
         return containsInArray(text, extraValues.split(SEPARATOR_FOR_COMMA_SPLITTABLE_TEXT));
-    }
-
-    public static String removeFromCommaSplittableTextIfExists(final String text,
-            final String extraValues) {
-        if (TextUtils.isEmpty(extraValues)) {
-            return EMPTY_STRING;
-        }
-        final String[] elements = extraValues.split(SEPARATOR_FOR_COMMA_SPLITTABLE_TEXT);
-        if (!containsInArray(text, elements)) {
-            return extraValues;
-        }
-        final ArrayList<String> result = new ArrayList<>(elements.length - 1);
-        for (final String element : elements) {
-            if (!text.equals(element)) {
-                result.add(element);
-            }
-        }
-        return TextUtils.join(SEPARATOR_FOR_COMMA_SPLITTABLE_TEXT, result);
     }
 
     public static String capitalizeFirstCodePoint(final String s,
