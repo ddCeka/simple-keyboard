@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
 /*
 **
-** Copyright 2014, The Android Open Source Project
+** Copyright 2025, The Android Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -17,10 +17,8 @@
 ** limitations under the License.
 */
 -->
-
-<resources>
-    <style name="platformSettingsTheme" parent="@android:style/Theme.DeviceDefault.Settings" >
-        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
-    </style>
-    <style name="platformDialogTheme" parent="@android:style/Theme.DeviceDefault.Light.Dialog" />
-</resources>
+<merge xmlns:latin="http://schemas.android.com/apk/res-auto">
+    <Row>
+        <include latin:keyboardLayout="@xml/rowkeys_ergol0" />
+    </Row>
+</merge>
